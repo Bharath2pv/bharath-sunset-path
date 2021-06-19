@@ -5,10 +5,10 @@ import {
   fragmentShaderValue,
   skyfragmentShaderValue,
   skyvertexShaderValue,
-} from "./jsfiles/material";
+} from "./jsfiles/Shader";
 import palleteimage from "./img/pallete.png";
-import './InteractiveLandscape.css';
-import {animateTitles} from './jsfiles/TitleAnimate';
+import "./InteractiveLandscape.css";
+import { animateTitles } from "./jsfiles/TitleAnimate";
 
 class InteractiveLandscape extends React.Component {
   constructor(props) {
@@ -50,7 +50,6 @@ class InteractiveLandscape extends React.Component {
   }
 
   initializeComponent = () => {
-   
     this.sceneSetup();
     this.sceneElements();
     this.sceneTextures();
@@ -198,7 +197,7 @@ class InteractiveLandscape extends React.Component {
 
   renderit = () => {
     requestAnimationFrame(this.renderit);
-    // damping mouse for smoother interaction
+
     if (this.terrain) {
       this.xDamped = this.lerp(
         this.xDamped,
@@ -210,7 +209,7 @@ class InteractiveLandscape extends React.Component {
         this.mousepointY,
         this.props.dampingFactor ? this.props.dampingFactor : 0.1
       );
-      // console.log("bharath", mousepointX, mousepointY);
+
       var time = performance.now() * 0.001;
       this.terrain.material.uniforms.time.value = time;
       this.terrain.material.uniforms.scroll.value =
@@ -247,11 +246,13 @@ class InteractiveLandscape extends React.Component {
   render() {
     return (
       <div>
-      <div className='content'>
-        <canvas id="landscape"></canvas>
-        <h2 className='contentTitle'>{this.props.title ? this.props.title : 'Mirror' }</h2>
-      </div>
-      <div className="overlay"></div>
+        <div className="content">
+          <canvas id="landscape"></canvas>
+          <h2 className="contentTitle">
+            {this.props.title ? this.props.title : "Mirror"}
+          </h2>
+        </div>
+        <div className="overlay"></div>
       </div>
     );
   }
