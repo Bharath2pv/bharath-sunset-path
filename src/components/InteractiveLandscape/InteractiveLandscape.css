@@ -1,0 +1,38 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 50vh;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentTitle {
+	position: relative;
+	color: #ffffff;
+	font-size: 5vw;
+	margin: 0;
+	perspective: 1000px;
+}
+
+.contentTitle span {
+	display: inline-block;
+	white-space: pre;
+	transform-origin: 50% -50%;
+}
+
+#landscape {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #000;
+}
