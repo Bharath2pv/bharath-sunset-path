@@ -28,15 +28,6 @@ export const animateTitles=()=> {
     0.1
   );
 
-  const subtitle = document.querySelector(".content__subtitle");
-  TweenMax.set(subtitle, { opacity: 0 });
-  TweenMax.to(subtitle, 1.5, {
-    ease: Expo.easeOut,
-    startAt: { y: 30 },
-    opacity: 1,
-    y: 0,
-  });
-
   const glitch = (el, cycles) => {
     if (cycles === 0 || cycles > 3) return;
     TweenMax.set(el, {
